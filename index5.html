@@ -1,0 +1,212 @@
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>A grouped pure CSS parallax by Max Rogers</title>
+<style>
+
+/* setup stuff
+--------------------------------------------- */
+
+  body, html {
+    overflow: hidden;
+  }
+
+  body {
+    font: 100% / 1.5 Arial;
+  }
+
+  * {
+    margin:0;
+    padding:0;
+  }
+
+   /* centre the content in the parallax layers */
+  .title {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  /* setting up parallax
+  --------------------------------------------- */
+  .parallax{
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    -webkit-perspective-origin-x: 100%;
+    perspective-origin-x: 100%;
+  }
+
+  .para_group{
+    position: relative;
+    height: 500px; /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .para {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform-origin-x: 100%;
+    transform-origin-x: 100%;
+  }
+
+  .para_fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+  }
+
+  .para_base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  .para_back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
+  /* style the groups
+  --------------------------------------------- */
+  .group1{
+    height: 200vh;
+    z-index: 5;
+    background-color: rgb(255,0,0);
+  }
+
+  .group0{
+    z-index: 3;
+
+  }
+  .group0 .para_back{
+    background-color: rgb(0,255,0);
+  }
+
+  .group2{
+    z-index: 3;
+    background-color: rgb(0,0,255);
+  }
+
+  .group3{
+    z-index: 1;
+  }
+  .group3 .para_back{
+    background-color: rgb(255,0,255);
+  }
+
+  .group4{
+    z-index: 3;
+    background-color: rgb(0,0,255);
+  }
+
+  .group5{
+    z-index: 1;
+  }
+  .group5 .para_back{
+    background-color: rgb(255,0,255);
+  }
+  .group6{
+    height: 50vh;
+    z-index: 5;
+    background-color: rgb(255,0,0);
+  }
+
+</style>
+</head>
+<body>
+  <div class="parallax">
+    <div class="para_group group0">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 0</div>
+      </div>
+      <div class="para para_base">
+        <div class="title">Base Layer 0</div>
+      </div>
+      <div class="para para_back">
+        <div class="title">Background Layer 0</div>
+      </div>
+    </div>
+    <div class="para_group group1">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 1</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 1</div>
+      </div>
+      <div class="para para_back ">
+        <div class="title">Background Layer 1</div>
+      </div>
+    </div>
+    <div class="para_group group2">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 2</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 2</div>
+      </div>
+      <div class="para para_back ">
+        <div class="title">Background Layer 2</div>
+      </div>
+    </div>
+    <div class="para_group group3">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 3</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 3</div>
+      </div>
+      <div class="para para_back ">
+        <div class="title">Background Layer 3</div>
+      </div>
+    </div>
+    <div class="para_group group4">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 4</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 4</div>
+      </div>
+      <div class="para para_back ">
+        <div class="title">Background Layer 4</div>
+      </div>
+    </div>
+    <div class="para_group group5">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 5</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 5</div>
+      </div>
+      <div class="para para_back ">
+        <div class="title">Background Layer 5</div>
+      </div>
+    </div>
+    <div class="para_group group6">
+      <div class="para para_fore">
+        <div class="title">Foreground Layer 6</div>
+      </div>
+      <div class="para para_base">
+        <h1> HELLO! </h1>
+        <div class="title">Base Layer 6</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
